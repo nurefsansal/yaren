@@ -1,7 +1,7 @@
-
 import { useEffect, useState } from "react";
 
 import Intro from "./components/Intro.jsx";
+import Hero from "./components/Hero.jsx";
 import Products from "./components/Products.jsx";
 import Contact from "./components/Contact.jsx";
 
@@ -34,9 +34,7 @@ export default function App() {
         </a>
 
         <nav>
-          <a href="#top" className="active">
-            Ana Sayfa
-          </a>
+          <a href="#top" className="active">Ana Sayfa</a>
           <a href="#kahveler">Kahveler</a>
           <a href="#hikaye">Hikâyemiz</a>
           <a href="#iletisim">İletişim</a>
@@ -44,34 +42,7 @@ export default function App() {
       </header>
 
       <main>
-        <section id="top" className="hero">
-          {[...Array(7)].map((_, i) => (
-            <i key={i} className="drop" style={{ "--i": i }} />
-          ))}
-
-          <div className={`hero-content ${ready ? "show" : ""}`}>
-            <p className="eyebrow">Bir fincan molası</p>
-
-            <h1>
-              Her fincanda
-              <br />
-              ortak bir <em>hikâye.</em>
-            </h1>
-
-            <p className="lead">
-              Kahvenin kokusunda, sohbetin sıcaklığında ve paylaşılan güzel
-              anlarda buluşalım.
-            </p>
-
-            <a className="btn" href="#kahveler">
-              Kahveleri Keşfet <span aria-hidden="true">→</span>
-            </a>
-          </div>
-
-          <p className="hand" aria-hidden="true">
-            Kahve insanları birleştirir.
-          </p>
-        </section>
+        <Hero ready={ready} />
 
         <div className="wood-strip" aria-hidden="true" />
 

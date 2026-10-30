@@ -1,15 +1,12 @@
-
-export default function Hero() {
+export default function Hero({ ready }) {
   return (
-    <section id="anasayfa" className="hero">
-      <div
-        className="hero-image"
-        role="img"
-        aria-label="Yâren kahve sunumu"
-      />
+    <section id="top" className="hero">
+      {[...Array(7)].map((_, i) => (
+        <i key={i} className="drop" style={{ "--i": i }} />
+      ))}
 
-      <div className="hero-content">
-        <p className="eyebrow">BİR FİNCAN MOLASI</p>
+      <div className={`hero-content ${ready ? "show" : ""}`}>
+        <p className="eyebrow">Bir fincan molası</p>
 
         <h1>
           Her fincanda
@@ -17,24 +14,19 @@ export default function Hero() {
           ortak bir <em>hikâye.</em>
         </h1>
 
-        <p className="hero-description">
-          Kahvenin kokusunda, sohbetin sıcaklığında
-          ve paylaşılan güzel anlarda buluşalım.
+        <p className="lead">
+          Kahvenin kokusunda, sohbetin sıcaklığında ve paylaşılan güzel
+          anlarda buluşalım.
         </p>
 
-        <a href="#kahveler" className="button button-light">
-          Kahveleri Keşfet <span aria-hidden="true">↗</span>
+        <a className="btn" href="#kahveler">
+          Kahveleri Keşfet <span aria-hidden="true">→</span>
         </a>
-
-        <div className="hero-note">
-          <span className="hero-note-line" />
-          Özenle seçildi, sevgiyle hazırlandı.
-        </div>
       </div>
 
-      <div className="hero-side-label">
-        COFFEE · PEOPLE · STORIES
-      </div>
+      <p className="hand" aria-hidden="true">
+        Kahve insanları birleştirir.
+      </p>
     </section>
   );
 }
